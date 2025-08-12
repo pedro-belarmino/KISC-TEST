@@ -1,0 +1,295 @@
+// Always include base bootstrap functions first
+@import "bootstrap/scss/functions";
+
+// Custom settings
+$prefix: "kisc-";
+
+// Custom fonts
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+// Custom colours 
+$blue: #00A4F2 !default;
+$indigo: #3A5DAE !default;
+$purple: #6f42c1 !default;
+$pink: #E6007E !default;
+$red: #DD3333 !default;
+$orange: #FF6E00 !default;
+$yellow: #FED141 !default;
+$green: #1EB446 !default;
+$teal: #20c997 !default;
+$cyan: #0dcaf0 !default;
+$gray: #f9f9f9 !default;
+$black: #000000 !default;
+
+// Subtle colours
+$alternate-bg-subtle: tint-color($indigo, 80%) !default;
+$pinkie-bg-subtle: tint-color($pink, 80%) !default;
+$jamboree-bg-subtle: tint-color($orange, 80%) !default;
+$adventure-bg-subtle: tint-color($indigo, 80%) !default;
+$environment-bg-subtle: tint-color($green, 80%) !default;
+$friendship-bg-subtle: tint-color($yellow, 80%) !default;
+$wosm-bg-subtle: tint-color($purple, 80%) !default;
+$gray-bg-subtle: tint-color($gray, 80%) !default;
+$red-bg-subtle: tint-color($red, 80%) !default;
+
+// Custom theme colours
+$custom-colors: (
+    "alternate": $indigo,
+    "pinkie": $pink,
+    "staff": $pink,
+    "helper": $green,
+    "committee": $indigo,
+    "ambassador": $orange,
+    "member": $yellow,
+    "learning": $indigo,
+    "adventure": $indigo,
+    "family": $pink,
+    "black": $black,
+    "environment": $green,
+    "wosm": $purple,
+    "jamboree": $orange,
+    "friendship": $yellow,
+    "gray": $gray,
+    "red": $red,
+    "purple": $purple,
+);
+
+// Override colours
+$secondary: #6c757d !default;
+$info: $orange !default;
+$table-bg: #F9F9F9;
+
+// Custom settings
+$dark-colors: 'primary', 'secondary', 'pinkie', 'jamboree', 'adventure', 'environment', 'wosm', 'red';
+$light-colors: 'warning', 'light', 'friendship';
+$min-contrast-ratio: 2.7 !default;
+$table-cell-padding-y: .25rem;
+
+// Fonts
+$font-family-sans-serif: "Cabin", sans-serif;
+$font-family-serif: "Aleo", serif;
+$font-family-base: "Aleo", serif;
+$headings-font-family: $font-family-sans-serif;
+
+// Required
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrap/scss/maps";
+
+//Set up subtle colours
+$theme-colors-bg-subtle: (
+    "primary": $primary-bg-subtle,
+    "secondary": $secondary-bg-subtle,
+    "alternate": $alternate-bg-subtle,
+    "success": $success-bg-subtle,
+    "info": $info-bg-subtle,
+    "warning": $warning-bg-subtle,
+    "danger": $danger-bg-subtle,
+    "light": $light-bg-subtle,
+    "dark": $dark-bg-subtle,
+    "pinkie": $pinkie-bg-subtle,
+    "adventure": $adventure-bg-subtle,
+    "jamboree": $jamboree-bg-subtle,
+    "environment": $environment-bg-subtle,
+    "friendship": $friendship-bg-subtle,
+    "wosm": $wosm-bg-subtle,
+    "gray": $gray-bg-subtle,
+    "red": $red-bg-subtle,
+);
+$utilities-bg-subtle: (
+    "primary-subtle": var(--#{$prefix}primary-bg-subtle),
+    "secondary-subtle": var(--#{$prefix}secondary-bg-subtle),
+    "alternate-subtle": var(--#{$prefix}alternate-bg-subtle),
+    "success-subtle": var(--#{$prefix}success-bg-subtle),
+    "info-subtle": var(--#{$prefix}info-bg-subtle),
+    "warning-subtle": var(--#{$prefix}warning-bg-subtle),
+    "danger-subtle": var(--#{$prefix}danger-bg-subtle),
+    "light-subtle": var(--#{$prefix}light-bg-subtle),
+    "dark-subtle": var(--#{$prefix}dark-bg-subtle),
+    "pinkie-subtle": var(--#{$prefix}pinkie-bg-subtle),
+    "jamboree-subtle": var(--#{$prefix}jamboree-bg-subtle),
+    "adventure-subtle": var(--#{$prefix}adventure-bg-subtle),
+    "environment-subtle": var(--#{$prefix}environment-bg-subtle),
+    "friendship-subtle": var(--#{$prefix}friendship-bg-subtle),
+    "wosm-subtle": var(--#{$prefix}wosm-bg-subtle),
+    "gray-subtle": var(--#{$prefix}gray-bg-subtle),
+    "red-subtle": var(--#{$prefix}red-bg-subtle),
+);
+
+// Override variables
+$accordion-button-active-bg: #{$blue};
+$accordion-button-active-color: white;
+$dropdown-link-hover-color: white;
+$dropdown-link-hover-bg: #{$blue};
+$nav-pills-link-active-bg: $primary-bg-subtle;
+$nav-pills-link-active-color: black;
+
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas"; // Requires transitions
+@import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+// Custom styles
+html,
+body,
+#__nuxt {
+    height: 100%;
+}
+
+body {
+    background-color: #F9F9F9;
+}
+
+nav {
+    font-family: $font-family-sans-serif;
+}
+
+.nav {
+    font-family: $font-family-sans-serif;
+}
+
+.dropdown-menu {
+    font-family: $font-family-sans-serif;
+}
+
+nav.bg-light a {
+    --#{$prefix}nav-link-color: var(--#{$prefix}link-color);
+    --#{$prefix}nav-link-hover-color: var(--#{$prefix}link-hover-color);
+    --#{$prefix}navbar-brand-color: var(--#{$prefix}link-color);
+    --#{$prefix}navbar-brand-hover-color: var(--#{$prefix}link-color);
+    --#{$prefix}navbar-active-color: var(--#{$prefix}link-color);
+}
+
+// Headings
+h1 {
+    color: $primary;
+}
+
+// Custom Alerts
+@each $state in map-keys($theme-colors) {
+    .alert-#{$state} {
+        --#{$prefix}alert-color: white;
+        --#{$prefix}alert-bg: var(--#{$prefix}#{$state});
+        --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border);
+        --#{$prefix}alert-link-color: white;
+    }
+}
+
+@each $state in $light-colors {
+    .alert-#{$state} {
+        --#{$prefix}alert-color: black;
+        --#{$prefix}alert-link-color: black;
+    }
+}
+
+// Bright colour theme
+@include color-mode(bright, true) {
+    color-scheme: bright;
+    --#{$prefix}emphasis-color: #{$body-emphasis-color-dark};
+    --#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color-dark)};
+}
+
+.table:not(.table-simple) {
+    @extend .shadow;
+}
+
+.table:not(.table-simple) thead {
+    font-family: $font-family-sans-serif;
+    --#{$prefix}table-bg: #{$primary};
+    --#{$prefix}table-color: white;
+}
+
+.table:not(.table-simple) thead th {
+    padding: 0.75rem;
+}
+
+.table:not(.table-simple) thead:first-child tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.table:not(.table-simple) thead:first-child tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+
+footer {
+    display: block;
+    padding: 0 30px;
+    color: white;
+    font-family: 'Cabin';
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: yellow;
+}
+
+footer ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+footer li {
+    margin-bottom: 10px;
+}
+
+.sidebar {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 18px 0px;
+    --#{$prefix}body-bg: #F9F9F9;
+}
+
+@include media-breakpoint-up(md) {
+    .sidebar {
+        min-height: 100vh;
+    }
+}
+
+.inline-icon {
+    width: 1em;
+    height: 1em;
+    margin-bottom: 0.125em;
+    vertical-align: middle;
+}
