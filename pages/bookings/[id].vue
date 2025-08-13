@@ -49,54 +49,54 @@ function formatDate(date: string | null) {
       <div class="card mb-4">
         <div class="card-header bg-primary text-white">Reservation period</div>
         <div class="card-body">
-          <p><strong>Period:</strong> {{ formatDate(data.ARRIVAL) }} → {{ formatDate(data.DEPARTURE) }}</p>
-          <p><strong>Nights:</strong> {{ data.NIGHTS }}</p>
+          <p><b>Period:</b> {{ formatDate(data.ARRIVAL) }} → {{ formatDate(data.DEPARTURE) }}</p>
+          <p><b>Nights:</b> {{ data.NIGHTS }}</p>
         </div>
       </div>
       
       <div class="card mb-4">
         <div class="card-header bg-secondary text-white">GUEST INFORMATION</div>
         <div class="card-body">
-          <p><strong>Identification:</strong> {{ data.s_guest.NAME2 }}</p>
-          <p><strong>Inviteds:</strong> {{ data.NUMBER }}</p>
-          <p><strong>Reserved Units:</strong> {{ data.COUNT }}</p>
-          <p><strong>Reservatio Title:</strong> {{ data.MATCH1 }}</p>
+          <p><b>Identification:</b> {{ data.s_guest.NAME2 }}</p>
+          <p><b>Inviteds:</b> {{ data.NUMBER }}</p>
+          <p><b>Reserved Units:</b> {{ data.COUNT }}</p>
+          <p><b>Reservatio Title:</b> {{ data.MATCH1 }}</p>
         </div>
       </div>
 
       <div class="card mb-4">
         <div class="card-header bg-success text-white">FIANCIAL INFORMATION</div>
         <div class="card-body">
-          <p><strong>Total Reservation Value:</strong> {{ data.PINAD }} {{ data.PINAD1C }}</p>
-          <p><strong>Open Credit:</strong> {{ data.CREDITOPEN }}</p>
-          <p><strong>Payment Due Date:</strong> {{ formatDate(data.CREDITDUE) }}</p>
-          <p><strong>Included Value:</strong> {{ data.INCPRICE }} {{data.INCPRICEC}}</p>
+          <p><b>Total Reservation Value:</b> {{ data.PINAD }} {{ data.PINAD1C }}</p>
+          <p><b>Open Credit:</b> {{ data.CREDITOPEN }}</p>
+          <p><b>Payment Due Date:</b> {{ formatDate(data.CREDITDUE) }}</p>
+          <p><b>Included Value:</b> {{ data.INCPRICE }} {{data.INCPRICEC}}</p>
         </div>
       </div>
 
       <div class="card mb-4">
         <div class="card-header bg-purple text-white">NOTES AND COMMENTS</div>
         <div class="card-body">
-          <p><strong>Internal Notes:</strong> {{ data.MEMO }}</p>
-          <p><strong>Additional Text:</strong> {{ data.TEXT }}</p>
+          <p><b>Internal Notes:</b> {{ data.MEMO }}</p>
+          <p><b>Additional Text:</b> {{ data.TEXT }}</p>
         </div>
       </div>
 
       <div class="card mb-4">
         <div class="card-header bg-black text-white">STATUS AND CONTROL</div>
         <div class="card-body">
-          <p><strong>Confirmed:</strong> {{ formatStatus(data.ST_CONF) }}</p>
-          <p><strong>COnfirmation Date:</strong> {{ formatDate(data.ST_CONFD) }}</p>
-          <p><strong>Cancelled:</strong> {{ formatYesNo(data.ST_CANCEL) }}</p>
-          <p><strong>Cancellation Date:</strong> {{ formatDate(data.CANCELD) }}</p>
-          <p><strong>Expired?:</strong> {{ formatYesNo(data.ST_EXPIRE) }}</p>
+          <p><b>Confirmed:</b> {{ formatStatus(data.ST_CONF) }}</p>
+          <p><b>COnfirmation Date:</b> {{ formatDate(data.ST_CONFD) }}</p>
+          <p><b>Cancelled:</b> {{ formatYesNo(data.ST_CANCEL) }}</p>
+          <p><b>Cancellation Date:</b> {{ formatDate(data.CANCELD) }}</p>
+          <p><b>Expired?:</b> {{ formatYesNo(data.ST_EXPIRE) }}</p>
         </div>
       </div>
 
       <div class="card mb-4">
         <div class="card-header bg-warning text-white">MEAL PLAN</div>
         <div class="card-body">
-          <p><strong>Meal Plan Type:</strong> {{ data.BOARDSTORE }}</p>
+          <p><b>Meal Plan Type:</b> {{ data.BOARDSTORE }}</p>
         </div>
       </div>
 
