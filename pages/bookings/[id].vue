@@ -34,12 +34,6 @@ function formatDate(date: string | null) {
   return format(parseISO(date), 'dd/MM/yyyy')
 }
 
-function bookingStatus(b: s_reser) {
-  if (b.ST_CANCEL === 'Y') return 'Cancelled'
-  if (b.ST_CONF === 'Y') return 'Confirmed'
-  if (b.ST_EXPIRE === 'Y') return 'Expired'
-  return 'Pending'
-}
 </script>
 
 <template>
@@ -48,11 +42,6 @@ function bookingStatus(b: s_reser) {
 
     <div v-if="error" class="alert alert-danger">
       Error loading booking.
-    </div>
-
-    <div v-if="status === 'pending'" class="text-center my-5">
-      <div class="spinner-border" role="status"></div>
-      <p>Loading booking...</p>
     </div>
 
     <div v-if="data && codes" class="space-y-4">
@@ -68,7 +57,7 @@ function bookingStatus(b: s_reser) {
       <div class="card mb-4">
         <div class="card-header bg-secondary text-white">GUEST INFORMATION</div>
         <div class="card-body">
-          <p><strong>Identification:</strong> {{ data.GUEST_R }}</p>
+          <p><strong>Identification:</strong> {{ data.s_guest.NAME2 }}</p>
           <p><strong>Inviteds:</strong> {{ data.NUMBER }}</p>
           <p><strong>Reserved Units:</strong> {{ data.COUNT }}</p>
           <p><strong>Reservatio Title:</strong> {{ data.MATCH1 }}</p>
@@ -86,7 +75,7 @@ function bookingStatus(b: s_reser) {
       </div>
 
       <div class="card mb-4">
-        <div class="card-header bg-secondary text-white">NOTES AND COMMENTS</div>
+        <div class="card-header bg-purple text-white">NOTES AND COMMENTS</div>
         <div class="card-body">
           <p><strong>Internal Notes:</strong> {{ data.MEMO }}</p>
           <p><strong>Additional Text:</strong> {{ data.TEXT }}</p>
@@ -94,7 +83,7 @@ function bookingStatus(b: s_reser) {
       </div>
 
       <div class="card mb-4">
-        <div class="card-header bg-success text-white">STATUS AND CONTROL</div>
+        <div class="card-header bg-black text-white">STATUS AND CONTROL</div>
         <div class="card-body">
           <p><strong>Confirmed:</strong> {{ formatStatus(data.ST_CONF) }}</p>
           <p><strong>COnfirmation Date:</strong> {{ formatDate(data.ST_CONFD) }}</p>
@@ -105,7 +94,7 @@ function bookingStatus(b: s_reser) {
       </div>
 
       <div class="card mb-4">
-        <div class="card-header bg-success text-white">MEAL PLAN</div>
+        <div class="card-header bg-warning text-white">MEAL PLAN</div>
         <div class="card-body">
           <p><strong>Meal Plan Type:</strong> {{ data.BOARDSTORE }}</p>
         </div>
