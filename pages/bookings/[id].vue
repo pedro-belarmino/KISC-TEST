@@ -72,13 +72,18 @@ function formatDate(date: string | null) {
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                 data-bs-parent="#reservationAccordion">
-                <div class="accordion-body" v-for="item in data.s_reser_pr">
-                  <p><b>Identification:</b> {{ item.IDENT }}</p>
-                  <p><b>ARTD1:</b> {{ item.ARTD1 }}</p>
-                  <p><b>Infor:</b> {{ item.INFO }}</p>
-                  <p><b>billit:</b> {{ item.BILLIT }}</p>
-                  <p><b>billTIMES:</b> {{ item.BILLTIMES }}</p>
-                  <p><b>billdate:</b> {{ formatDate(item.BILLDATE) }}</p>
+                <div class="accordion-body row" v-for="item in data.s_reser_pr">
+                  <div class="col">
+                    <p><b>Identification:</b> {{ item.IDENT }}</p>
+                    <p><b>Article Description:</b> {{ item.ARTD1 }}</p>
+                    <p><b>Infor:</b> {{ item.INFO }}</p>
+                  </div>
+                  <div class="col">
+                    <p><b>Bill:</b> {{ item.BILLIT }}</p>
+                    <p><b>Bill Times:</b> {{ item.BILLTIMES }}</p>
+                    <p><b>Bill Date:</b> {{ formatDate(item.BILLDATE) }}</p>
+                  </div>
+                  <hr>
                 </div>
               </div>
             </div>
